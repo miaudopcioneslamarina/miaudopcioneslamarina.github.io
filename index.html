@@ -1,12 +1,46 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
-</head>
-<body>
-    <h1>Hola, esta es mi página web</h1>
-    <p>Creada gratis con GitHub Pages</p>
-</body>
-</html>
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-white text-gray-900">
+      <header className="shadow-sm border-b">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold">Mi Aud Opciones La Marina</h1>
+          <nav className="space-x-6 text-sm">
+            <a href="#inicio" className="hover:underline">Inicio</a>
+            <a href="#servicios" className="hover:underline">Servicios</a>
+            <a href="#contacto" className="hover:underline">Contacto</a>
+          </nav>
+        </div>
+      </header>
+
+      <section id="inicio" className="max-w-6xl mx-auto px-6 py-20 text-center">
+        <h2 className="text-5xl font-bold mb-6">Bienvenido</h2>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Tu espacio profesional para descubrir opciones, servicios y atención personalizada en La Marina.
+        </p>
+        <button className="mt-8 px-6 py-3 rounded-2xl shadow-md border hover:shadow-lg transition">
+          Contáctanos
+        </button>
+      </section>
+
+      <section id="servicios" className="bg-gray-50 py-20">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6">
+          {[
+            'Asesoramiento personalizado',
+            'Opciones y servicios premium',
+            'Atención rápida y profesional',
+          ].map((item) => (
+            <div key={item} className="p-6 rounded-2xl shadow-sm bg-white border">
+              <h3 className="text-xl font-semibold mb-3">{item}</h3>
+              <p className="text-gray-600">Descripción de este servicio para tus clientes.</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="contacto" className="max-w-6xl mx-auto px-6 py-20 text-center">
+        <h2 className="text-3xl font-bold mb-4">Contacto</h2>
+        <p className="text-gray-600">Escríbenos para más información.</p>
+      </section>
+    </div>
+  );
+}
